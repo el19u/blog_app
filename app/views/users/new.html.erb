@@ -1,15 +1,23 @@
 <%= form_with(model: @user) do |f| %>
-    <div class="field">
-      <%= f.label("email") %>
-      <%= f.text_field(:email) %>
+  <% if @user.errors.any? %>
+    <div class="text-red-500">
+      <% @user.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
     </div>
+  <% end %>
 
-    <div class="field">
-      <%= f.label("password") %>
-      <%= f.text_field(:password) %>
-    </div>
-  
-    <div class="submit">
-      <%= f.submit("Submit")%>
-    </div>
+  <div class="field">
+    <%= f.label("email") %>
+    <%= f.text_field(:email) %>
+  </div>
+
+  <div class="field">
+    <%= f.label("password") %>
+    <%= f.text_field(:password) %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit("註冊")%>
+  </div>
 <% end %>
