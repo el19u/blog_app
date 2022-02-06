@@ -1,0 +1,10 @@
+<h1>Index</h1>
+
+<% @posts.each do |post| %>
+  <%= post.title %>
+  <%= post.author %>
+  <%= post.content %>
+  <%= link_to "edit", edit_post_path(post) %>
+<% end %>
+
+<%= link_to "new post", new_post_path %>
