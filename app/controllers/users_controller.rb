@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:session] = @user.id
       redirect_to root_path, notice: "Welcome! #{@user.email}"
     else
       render :new

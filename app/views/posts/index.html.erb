@@ -1,5 +1,9 @@
 <h1>Index</h1>
 
+<% if @user %>
+  Logged in ad <%= @user.email %>
+<% end %>
+
 <% @posts.each do |post| %>
   <%= post.title %>
   <%= post.author %>

@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :find_params, only: [:show, :edit, :update, :destroy]
-
   def index
+    if session[:session]
+      @user = User.find(session[:session])
+    end
     @posts = Post.all
   end
 
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(posts_params)
-    
+
     if @post.save
       redirect_to root_path
     else
