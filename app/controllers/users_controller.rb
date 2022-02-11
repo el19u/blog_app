@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  def index
-    if session[:session]
-      @user = User.find(session[:session])
-    end
-  end
+  before_action :current_user
 
   def new
     @user = User.new
