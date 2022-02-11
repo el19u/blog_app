@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
   before_action :find_params, only: [:show, :edit, :update, :destroy]
+  before_action :current_user
 
   def index
-    if session[:session]
-      @user = User.find(session[:session])
-    end
     @posts = Post.all
   end
 

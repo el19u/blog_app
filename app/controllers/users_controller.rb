@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  def index
+    if session[:session]
+      @user = User.find(session[:session])
+    end
+  end
+
   def new
     @user = User.new
   end
