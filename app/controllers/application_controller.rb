@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_user
+
+  private
   def current_user
     if session[:session]
       @user = User.find(session[:session])
-      return redirect_to posts_path
+      redirect_to posts_path
     end
   end
 end
