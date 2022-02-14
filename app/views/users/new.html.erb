@@ -4,16 +4,16 @@
   </div>
 
   <div class="field">
-    <%= f.label(:email) %>
+    <%= f.label(t :email) %>
     <%= f.email_field(:email) %>
   </div>
 
   <div class="field">
-    <%= f.label("password") %>
+    <%= f.label(t :password) %>
     <%= f.password_field(:password) %>
   </div>
 
   <div class="submit">
-    <%= f.submit("註冊")%>
+    <%= f.submit(t :submit)%>
   </div>
 <% end %>
