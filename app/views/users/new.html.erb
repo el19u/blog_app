@@ -1,11 +1,7 @@
 <%= form_with(model: @user) do |f| %>
-  <% if @user.errors.any? %>
-    <div class="text-red-500">
-      <% @user.errors.full_messages.each do |message| %>
-        <%= message %>
-      <% end %>
-    </div>
-  <% end %>
+  <div class="text-red-500">
+    <%= error_handler(@user) %>
+  </div>
 
   <div class="field">
     <%= f.label("email") %>
