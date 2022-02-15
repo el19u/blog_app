@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_params, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(:id)
   end
 
   def show

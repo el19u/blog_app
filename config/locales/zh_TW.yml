@@ -1,6 +1,8 @@
 zh_TW:
   email: "信箱"
   password: "密碼"
+  edit: "編輯"
+  new_post: "新文章"
   submit: "註冊"
   title: "標題"
   author: "作者"
