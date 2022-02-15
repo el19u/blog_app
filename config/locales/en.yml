@@ -1,3 +1,13 @@
 en:
   email: "email"
   password: "password"
+  submit: "submit"
+  title: "title"
+  author: "author"
+  content: "content"
+  home: "home"
+  author: "author"
+  about: "about"
+  sign_in: "sign_in"
+  sign_out: "sign_out"
+  sign_up: "sign_up"
