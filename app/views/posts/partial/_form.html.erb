@@ -1,20 +1,20 @@
 <%= form_with(model: post) do |f| %>
   <div class="field">
-    <%= f.label("title") %>
+    <%= f.label(t :title) %>
     <%= f.text_field(:title) %>
   </div>
 
   <div class="field">
-    <%= f.label("author") %>
+    <%= f.label(t :author) %>
     <%= f.text_field(:author) %>
   </div>
   
   <div class="field">
-    <%= f.label("content") %>
+    <%= f.label(t :content) %>
     <%= f.text_field(:content) %>
   </div>
 
   <div class="submit">
-    <%= f.submit("Submit")%>
+    <%= f.submit(t :submit)%>
   </div>
 <% end %>

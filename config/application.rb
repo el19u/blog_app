@@ -19,6 +19,6 @@ module BlogApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :zh_TW
-    config.time_zone = :Taipei
+    config.time_zone = "Taipei"
   end
 end
