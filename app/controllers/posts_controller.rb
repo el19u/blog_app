@@ -3,6 +3,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(:id)
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @posts }
+    end
   end
 
   def show
@@ -13,9 +17,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(posts_params)
+    @post = Post.new(post_params)
 
     if @post.save
+      respond_to do |format|
+        format.html { render :index, notice: "Post was successfully created." }
+        format.json { render json: :show, status :created }
+      end
       redirect_to posts_path
     else
       render :new
@@ -26,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(posts_params)
+    if @post.update(post_params)
       redirect_to posts_path
     else
       render :edit
@@ -39,7 +47,7 @@ class PostsController < ApplicationController
   end
 
   private
-  def posts_params
+  def post_params
     params.require(:post).permit(:title, :author, :content)
   end
 

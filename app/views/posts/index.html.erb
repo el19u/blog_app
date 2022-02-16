@@ -5,9 +5,15 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <%= post.title %>
-  <%= post.author %>
-  <%= post.content %>
+  <div>
+    <%= post.title %>
+  </div>
+  <div>
+    <%= post.author %>
+  </div>
+  <div>
+    <%= post.content %>
+  </div>
   <%= link_to (t(:edit)), edit_post_path(post) %>
 <% end %>
 
